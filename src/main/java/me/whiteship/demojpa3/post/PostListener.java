@@ -1,10 +1,10 @@
 package me.whiteship.demojpa3.post;
 
-import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.EventListener;
 
-public class PostListener implements ApplicationListener<PostPublishedEvent> {
+public class PostListener {
 
-    @Override
+    @EventListener
     public void onApplicationEvent(PostPublishedEvent postPublishedEvent) {
         System.out.println("----------------");
         System.out.println(postPublishedEvent.getPost().getTitle() + " is published!!");
